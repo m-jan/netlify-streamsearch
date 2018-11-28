@@ -2,35 +2,46 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class LambdaDemo extends Component {
+class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: false, msg: null };
+    this.state = {value: '', results: []};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleClick = e => {
-    e.preventDefault();
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
 
-    this.setState({ loading: true });
-    fetch('/.netlify/functions/hello')
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch('/.netlify/functions/query', {body: this.state.value, method: "POST"})
       .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }));
-  };
+      .then(result => this.setState({ results: result }))
+      .catch(error => console.log(error));
+  }
 
   render() {
-    const { loading, msg } = this.state;
-
     return (
-      <p>
-        <button onClick={this.handleClick}>
-          {loading ? 'Loading...' : 'Call Lambda'}
-        </button>
-        <br />
-        <span>{msg}</span>
-      </p>
+    <div>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+      <span>{this.state.results.map(r => <li>{r.title}</li>)}</span>
+    </div>
     );
   }
 }
+
+
+
+
 
 class App extends Component {
   render() {
@@ -41,7 +52,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <LambdaDemo />
+          <NameForm />
         </header>
       </div>
     );

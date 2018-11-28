@@ -1,13 +1,61 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* font-family: 'Source Sans Pro', sans-serif; */
 }
 
+:root {
+--jumbotron-padding-y: 5rem;
+}
+
+.jumbotron {
+padding-top: var(--jumbotron-padding-y);
+padding-bottom: var(--jumbotron-padding-y);
+margin-bottom: 0;
+background-color: rgb(36, 35, 35);
+color: #fff;
+text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+@media (min-width: 768px) {
+.jumbotron {
+  padding-top: calc(var(--jumbotron-padding-y) * 2);
+  padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+}
+}
+
+.jumbotron-heading {
+  /* color: rgb(78, 78, 78);
+font-weight: 300; 
+font-family: 'Philosopher', sans-serif; */
+
+}
+
+.jumbotron .container {
+max-width: 40rem;
+}
+
+.overlay-provider-icon {
+opacity: 0.7;
+}
+
+.overlay-provider-icon:hover {
+opacity: 1.0;
+}
+
+.album {
+  background-color: rgb(36, 35, 35);
+  color: #fff;
+text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid rgb(37, 37, 37);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
