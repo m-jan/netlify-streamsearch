@@ -14,14 +14,13 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="shadow-lg input-group mb-3">
+    <div className="has-animation mb-3">
         <input type="text" className="form-control"
         value={this.props.searchValue} onChange={this.handleSearchValueChange}>
         </input>
-        <div className="input-group-append">
-          <button className="btn btn-secondary" type="button" id="button-addon2"
-            onClick={this.props.onSearchSubmit}>Search</button>
-        </div>
+        <button className="btn btn-secondary mt-4" type="button"
+            onClick={this.props.onSearchSubmit}>SEARCH
+        </button>
     </div>
     )
   }
@@ -38,9 +37,9 @@ const ProviderList = () => {
   return (
   <div>
     <div>
-      <p className="pt-1 text-muted">Search across {providerIconList.length} providers</p>
+      <p className="pt-1 has-text-animation">Search across {providerIconList.length} providers</p>
     </div>
-    <div className="row px-4" id="providers">
+    <div className="row px-4 has-animation" id="providers">
       {providerIconList}
     </div>
     
@@ -53,8 +52,9 @@ const ProviderList = () => {
 const SearchJumbotron = (props) => (
   <div className="jumbotron text-center">
     <div className="container">
-      <h1 className="jumbotron-heading">Stream Search</h1>
-      <p className="lead">Search for your favourite movies and shows across streaming platforms.</p>
+    
+      <h1 className="jumbotron-heading has-text-animation">Stream Search</h1>
+      <p className="lead has-text-animation">Search for your favourite movies and shows across streaming platforms.</p>
       <div>
         <SearchBar 
           searchValue={props.searchValue} 

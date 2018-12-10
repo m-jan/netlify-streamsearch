@@ -6,15 +6,21 @@ html, body {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
-  background-color: rgb(36, 35, 35);
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(2,0,36,1) 35%, rgba(201,25,46,1) 100%);
   color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
 @media (min-width: 768px) {
@@ -23,7 +29,11 @@ html, body {
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
 }
-  
+
+
+
+
+
 .jumbotron .container {
   max-width: 40rem;
 }
@@ -33,25 +43,41 @@ html, body {
 }
 
 .results-container {
-  background-color: rgb(36, 35, 35);
+  background-color: rgba(2,0,36,1);
   color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
   overflow-y: scroll;
 }
-  
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-    color: #333;
-    text-shadow: none; /* Prevent inheritance from `body` */
-    background-color: #fff;
-    border: .05rem solid rgb(37, 37, 37);
+  color: #fff;
+  box-shadow: 0 8px 48px rgba(50,23,187,0.48);
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #3217BB;
+  border: .05rem solid rgb(50,23,187);
+  font-weight: bold;
+  font-size: small
 }
 
-#root {
-  height: 100%;
+@keyframes fade-text {
+  from {color: rgba(255, 255, 255, 0); top: 40px;}
+  to {color: rgba(255, 255, 255, 1); top: 0px;}
 }
-.full-height {
-  height: 100%;
+
+@keyframes fade {
+  from {opacity: 0; top: 40px;}
+  to {opacity: 1; top: 0px;}
+}
+
+.has-text-animation {
+  position: relative;
+  animation-name: fade-text;
+  animation-duration: 2s;
+}
+
+.has-animation {
+  position: relative;
+  animation-name: fade;
+  animation-duration: 2s;
 }
