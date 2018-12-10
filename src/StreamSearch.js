@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import nanoid from 'nanoid';
-//import jw_search from './justwatchSearch'
 import './App.css';
 
 class SearchBar extends Component {
@@ -99,7 +98,7 @@ const SearchResults = ({ results, isLoading }) => {
   ))
 
   return (
-  <div className="album py-5">
+  <div className="d-flex full-height results-container align-items-center">
     <div className="container">
       <div className="row justify-content-center">
         {isLoading ? <Loading /> : resultCards}
@@ -116,7 +115,6 @@ class Loading extends Component {
   } 
 
   componentDidMount() {
-    console.log("mounted" + this.scrollRef.current)
     this.scrollRef.current.scrollIntoView({behavior: "smooth"});
   }
 
@@ -162,7 +160,7 @@ class StreamSearch extends Component {
 
   render() {
     return (
-      <main role="main">
+      <main className="full-height" role="main">
         <SearchJumbotron 
           searchValue={this.state.searchValue} 
           onSearchValueChange={this.handleSearchValueChange}
