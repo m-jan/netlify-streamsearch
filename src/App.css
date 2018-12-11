@@ -2,17 +2,11 @@
   --jumbotron-padding-y: 4rem;
 }
 
-html, body {
-  height: 100%;
+.loading-container {
+  margin-top: 50vh;
+  margin-bottom: 50vh;
 }
 
-#root {
-  height: 100%;
-}
-
-.full-height {
-  height: 100%;
-}
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
@@ -30,10 +24,6 @@ html, body {
   }
 }
 
-
-
-
-
 .jumbotron .container {
   max-width: 40rem;
 }
@@ -45,7 +35,6 @@ html, body {
 .results-container {
   background-color: rgba(2,0,36,1);
   color: #fff;
-  overflow-y: scroll;
 }
 
 .btn-secondary,

@@ -85,7 +85,7 @@ const ProviderOverlay = ({ providers }) => {
 
 const ResultCard = ({ resultData }) => (
   <div className="col-6 col-md-2">
-    <div className="shadow-lg card mb-4">
+    <div className="shadow-lg card my-4">
       <img className="card-img" src={resultData.poster}></img>
       <ProviderOverlay providers={resultData.providers} />
     </div>
@@ -98,10 +98,10 @@ const SearchResults = ({ results, isLoading }) => {
   ))
 
   return (
-  <div className="d-flex full-height results-container align-items-center">
+  <div className="d-flex results-container align-items-center">
     <div className="container">
       <div className="row justify-content-center">
-        {isLoading ? <Loading /> : resultCards}
+        { isLoading ? <Loading /> : resultCards }
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@ class Loading extends Component {
 
   render() {
     return (
-      <div className="mx-5" ref={this.scrollRef}>
+      <div className="loading-container" ref={this.scrollRef}>
         <i className="fas fa-spinner fa-spin fa-2x"></i>
       </div>
     )
@@ -160,7 +160,7 @@ class StreamSearch extends Component {
 
   render() {
     return (
-      <main className="full-height" role="main">
+      <main role="main">
         <SearchJumbotron 
           searchValue={this.state.searchValue} 
           onSearchValueChange={this.handleSearchValueChange}
