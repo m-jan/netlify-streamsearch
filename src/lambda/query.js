@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body=%7B%22content_types%22:%5B%22show%22,%22movie%22%5D,%22page%22:1,%22page_size%22:24,%22query%22:%22'
+const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body=%7B%22content_types%22:%5B%22show%22,%22movie%22%5D,%22page%22:1,%22page_size%22:12,%22query%22:%22'
 const TMDB_API_KEY = '8bf763ff716cf4df79aa2db4f2d9458b'
 
 const providers = [8,39,9,103,29,38,137,41,129,102,99]
@@ -17,8 +17,8 @@ async function fetchPosters(item) {
 
   const resJSON = await fetch(url)
   const response = await resJSON.json()
-  if(response.results[0]) {
-    return `https://image.tmdb.org/t/p/original${response.results[0].poster_path}`
+  if(response.results[0].poster_path != null) {
+    return `https://image.tmdb.org/t/p/w154${response.results[0].poster_path}`
   } else {
     return ''
   }
