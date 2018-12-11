@@ -37,7 +37,7 @@ const ProviderList = () => {
   return (
   <div>
     <div>
-      <p className="pt-1 has-text-animation">Search across {providerIconList.length} providers</p>
+      <p className="pt-1 has-text-animation">Search across {providerIconList.length} streaming platforms.</p>
     </div>
     <div className="row px-4 has-animation" id="providers">
       {providerIconList}
@@ -54,7 +54,7 @@ const SearchJumbotron = (props) => (
     <div className="container">
     
       <h1 className="jumbotron-heading has-text-animation">Stream Search</h1>
-      <p className="lead has-text-animation">Search for your favourite movies and shows across streaming platforms.</p>
+      <p className="lead has-text-animation">Find where you can watch your favourite movies and shows on streaming platforms.</p>
       <div>
         <SearchBar 
           searchValue={props.searchValue} 
@@ -179,12 +179,10 @@ const PROVIDER_ICON_URLS = {
   "39" : "https://images.justwatch.com/icon/694554/s100/now-tv",
   "9" : "https://images.justwatch.com/icon/52449539/s100/amazon-prime-video",
   "103" : "https://images.justwatch.com/icon/3059247/s100/all-4",
-  "29" : "https://images.justwatch.com/icon/657328/s100/sky-go",
   "38" : "https://images.justwatch.com/icon/694553/s100/bbc-iplayer",
   "137" : "https://images.justwatch.com/icon/5149848/s100/uktv-play",
   "41" : "https://images.justwatch.com/icon/694556/s100/itv-player",
   "129" : "https://images.justwatch.com/icon/4527547/s100/disneylife",
-  "102" : "https://images.justwatch.com/icon/3059246/s100/filmstruck",
   "99" : "https://images.justwatch.com/icon/2562359/s100/shudder"
 }
 
@@ -193,12 +191,10 @@ const PROVIDER_URLS = {
   "39" : "https://www.nowtv.com/",
   "9" : "https://www.primevideo.com/",
   "103" : "https://www.channel4.com/now",
-  "29" : "https://www.sky.com/shop/tv/sky-go/",
   "38" : "https://www.bbc.co.uk/iplayer",
   "137" : "https://uktvplay.uktv.co.uk/",
   "41" : "https://www.itv.com/itvplayer/",
   "129" : "https://disneylife.com/",
-  "102" : "https://www.filmstruck.com/uk/",
   "99" : "https://try.shudder.com/uk/"
 }
   

@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body=%7B%22content_types%22:%5B%22show%22,%22movie%22%5D,%22page%22:1,%22page_size%22:12,%22query%22:%22'
 const TMDB_API_KEY = '8bf763ff716cf4df79aa2db4f2d9458b'
 
-const providers = [8,39,9,103,29,38,137,41,129,102,99]
+const providers = [8,39,9,103,38,137,41,129,99]
 
 function filterOffers(offers) {
   const uniqueOfferIds = Array.from(new Set(offers.map(offer => offer.provider_id)))
