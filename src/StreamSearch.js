@@ -30,7 +30,7 @@ const ProviderList = () => {
   const providerIconURLS = Object.values(PROVIDER_ICON_URLS)
   const providerIconList = providerIconURLS.map(url => (
     <div key={nanoid()} className="col-4 col-md-2 py-0">
-      <a href="#"><img className="shadow-lg img-fluid m-1 rounded" src={url}></img></a>
+      <img className="shadow-lg img-fluid m-1 rounded" src={url} alt=''></img>
     </div>
   ));
 
@@ -70,7 +70,7 @@ const SearchJumbotron = (props) => (
 const ProviderOverlay = ({ providers }) => {
   const resultProviderLinks = providers.map(provider => (
     <a key={nanoid()} style={{width: '35%', height: '35%'}} className="m-1" href={PROVIDER_URLS[provider]}>
-      <img className="overlay-provider-icon img-fluid m-1 rounded" src={PROVIDER_ICON_URLS[provider]}></img>
+      <img className="overlay-provider-icon img-fluid m-1 rounded" src={PROVIDER_ICON_URLS[provider]} alt=''></img>
     </a>
   ))
 
@@ -86,7 +86,7 @@ const ProviderOverlay = ({ providers }) => {
 const ResultCard = ({ resultData }) => (
   <div className="col-6 col-md-2">
     <div className="shadow-lg card my-4">
-      <img className="card-img" src={resultData.poster}></img>
+      <img className="card-img" src={resultData.poster} alt=''></img>
       <ProviderOverlay providers={resultData.providers} />
     </div>
   </div>
