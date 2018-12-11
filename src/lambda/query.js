@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body=%7B%22content_types%22:%5B%22show%22,%22movie%22%5D,%22page%22:1,%22page_size%22:12,%22query%22:%22'
-const TMDB_API_KEY = '8bf763ff716cf4df79aa2db4f2d9458b'
+const TMDB_API_KEY = process.env.TMDB_API_KEY
 
 const providers = [8,39,9,103,38,137,41,129,99]
 
