@@ -175,15 +175,15 @@ class StreamSearch extends Component {
 
 
 const PROVIDER_ICON_URLS = {
-  "8" : "https://images.justwatch.com/icon/430997/s100/netflix",
-  "39" : "https://images.justwatch.com/icon/694554/s100/now-tv",
-  "9" : "https://images.justwatch.com/icon/52449539/s100/amazon-prime-video",
-  "103" : "https://images.justwatch.com/icon/3059247/s100/all-4",
-  "38" : "https://images.justwatch.com/icon/694553/s100/bbc-iplayer",
-  "137" : "https://images.justwatch.com/icon/5149848/s100/uktv-play",
-  "41" : "https://images.justwatch.com/icon/694556/s100/itv-player",
-  "129" : "https://images.justwatch.com/icon/4527547/s100/disneylife",
-  "99" : "https://images.justwatch.com/icon/2562359/s100/shudder"
+  "8" : "/img/netflix.jpeg",
+  "39" : "/img/now-tv.jpeg",
+  "9" : "/img/amazon-prime-video.jpeg",
+  "103" : "/img/all-4.jpeg",
+  "38" : "/img/bbc-iplayer.jpeg",
+  "137" : "/img/uktv-play.jpeg",
+  "41" : "/img/itv-player.jpeg",
+  "129" : "/img/disneylife.jpeg",
+  "99" : "/img/shudder.jpeg"
 }
 
 const PROVIDER_URLS = {
