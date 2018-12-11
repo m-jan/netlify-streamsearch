@@ -15,6 +15,7 @@
   background: rgb(2,0,36);
   background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(2,0,36,1) 35%, rgba(201,25,46,1) 100%);
   color: #fff;
+  border-radius: 0%;
 }
 
 @media (min-width: 768px) {
