@@ -85,7 +85,7 @@ const ProviderOverlay = ({ providers }) => {
 
 const ResultCard = ({ resultData }) => (
   <div className="col-6 col-md-2">
-    <div className="shadow-lg card my-4">
+    <div className="has-animation card my-4">
       <img className="card-img" src={resultData.poster} alt=''></img>
       <ProviderOverlay providers={resultData.providers} />
     </div>
