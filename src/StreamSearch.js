@@ -74,8 +74,8 @@ const ProviderOverlay = ({ providers }) => {
     </a>
   ))
 
-  const unavailableOverlay = <div className="h-25"><button type="button" className="overlay-provider-icon mb-4 btn btn-danger btn-block">Unavailable</button></div>
-
+  const unavailableOverlay = <div className="unavailable-overlay">Unavailable</div>
+  
   return (
     <div className="card-img-overlay p-1 d-flex align-items-end justify-content-center flex-wrap align-content-end">
       {providers.length ? resultProviderLinks : unavailableOverlay}
