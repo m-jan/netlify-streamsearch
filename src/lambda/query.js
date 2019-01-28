@@ -30,6 +30,7 @@ async function fetchResults(query) {
 
   const resultPromiseArray = response.items.map(async item => ({
       title: item.title,
+      year: item.original_release_year || item.first_air_date_year,
       poster: await fetchPosters(item),
       providers: item.offers ? filterOffers(item.offers) : []
   }))

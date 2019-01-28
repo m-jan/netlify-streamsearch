@@ -82,9 +82,7 @@ const ResultContainer = (props) => {
         <div className="result-info">
             <div className="result-desc">
                 <p className="result-title">{result.title}</p>
-                <p className="result-year">
-                    2001
-                </p>
+                <p className="result-year">{result.year}</p>
             </div>
             <ResultProviderList providers={result.providers} />
         </div>
@@ -134,13 +132,14 @@ class App extends Component {
         hasSearched: true
       }))
       .catch(error => this.setState({
-        errorLoading: true
+        errorLoading: true,
+        isLoading: false
       }))
   }
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="hero">
             <a className="github-link" href="https://github.com/m-jan/netlify-streamsearch">
                 <img src="/img/GitHub-Mark-Light-32px.png" alt=""></img>
