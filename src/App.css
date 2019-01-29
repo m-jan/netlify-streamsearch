@@ -41,7 +41,13 @@ h1 {
 h3 {
   font-weight: 300;
   text-align: center;
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
+}
+
+@media (min-width: 48em) {
+  h3 {
+    font-size: 1.25em;
+  }
 }
 
 .search-container {
@@ -90,16 +96,15 @@ input::placeholder {
 }
 
 .search-button {
-  width: 6em;
   margin: 0.5em;
-  padding: 0.5em 0.3em;
+  padding: 0.5em 0.5em;
   border: none;
   border-radius: 0.3em;
   color: white;
   box-shadow: 0 1px 2px hsla(0,0%,0%,.3), 0 2px 3px hsla(0,0%,0%,0.1);
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   background-color: hsla(231, 48%, 50%, 1);
 }
@@ -163,7 +168,7 @@ a {
 }
 
 .search-footer {
-  margin: 0.5em 0;
+  margin: 1em 0 0.5em;
   font-size: 0.7em;
   color: hsla(0, 0%, 30%, 1);
   font-style: italic;
