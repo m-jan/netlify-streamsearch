@@ -1,4 +1,4 @@
-## [Stream Search](www.stream-search.io)
+## [Stream Search](https://www.stream-search.io)
 
 Stream Search allows users to search for the availability of movies and TV shows across streaming providers. It currently searches the UK libraries of the following streaming providers:
 
@@ -15,7 +15,7 @@ Stream Search allows users to search for the availability of movies and TV shows
 ### Development
 Stream Search is a ReactJS app hosted on Netlify, and is built on top of the [create-react-app-lambda](https://github.com/netlify/create-react-app-lambda) skeleton. Responsive layout is simply Flexbox, no CSS libraries are used. 
 
-Searches are performed using [Netlify Functions](https://www.netlify.com/docs/functions/) (using AWS Lambda under the hood). Queries are made to the [JustWatch API](www.justwatch.com/uk), which returns relevant results and provider availability. Request are also made to the [TMDB API](https://developers.themoviedb.org/3) to retrieve poster images.
+Searches are performed using [Netlify Functions](https://www.netlify.com/docs/functions/) (using AWS Lambda under the hood). Queries are made to the [JustWatch API](https://www.justwatch.com/uk), which returns relevant results and provider availability. Request are also made to the [TMDB API](https://developers.themoviedb.org/3) to retrieve poster images.
 
 JustWatch's data is not 100% accurate, particulary with the smaller providers.
 
