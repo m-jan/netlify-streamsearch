@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import nanoid from 'nanoid';
 import './App.css';
 
@@ -66,7 +66,7 @@ const ResultProviderList = (props) => {
     </a>
   ))
 
-  const unavailable = <div class="provider-unavailable">Unavailable</div>
+  const unavailable = <div className="provider-unavailable">Unavailable</div>
 
   return (
     <div className="result-provider-list">
@@ -155,19 +155,18 @@ class App extends Component {
           onSearchSubmit={this.handleSearchSubmit}
           isLoading={this.state.isLoading}
         />
-
-        {this.state.errorLoading &&
+        
+        {this.state.errorLoading ?
           <div className="result-error">
             <p>Sorry something went wrong! :( </p>
             <p>Try a different search!</p>
-          </div>
+          </div> :
+          this.state.hasSearched && 
+          <Fragment>
+            <div className="result-number">{this.state.results.length} results found</div>
+            <ResultContainer results={this.state.results} />
+          </Fragment>
         }
-
-        {this.state.hasSearched && 
-          <div className="result-number">{this.state.results.length} results found</div>
-        }
-
-        <ResultContainer results={this.state.results} />       
     </div>
     )
   }
