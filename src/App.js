@@ -37,7 +37,7 @@ class SearchForm extends Component {
           className="search-input" type="text" required placeholder="Try 'Jurassic Park'..."
           value={this.props.searchValue} onChange={this.handleSearchValueChange}
         />
-        <button type="button" className="search-button">
+        <button className="search-button">
           {this.props.isLoading ? <i className="loading-icon fas fa-spinner fa-spin fa-2x"></i> : "search" }
         </button>
       </form>
