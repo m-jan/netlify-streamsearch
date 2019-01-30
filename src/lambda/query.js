@@ -1,7 +1,16 @@
 import fetch from "node-fetch";
 
-const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body=%7B%22content_types%22:%5B%22show%22,%22movie%22%5D,%22page%22:1,%22page_size%22:12,%22query%22:%22'
-const TMDB_API_KEY = '8bf763ff716cf4df79aa2db4f2d9458b' //process.env.TMDB_API_KEY 
+const TMDB_BASE_URL = 'https://api.themoviedb.org/3/search/'
+const TMDB_LANG = '&language=en-US'
+const TMDB_PAGE = '&page=1'
+const TMDB_API_KEY = process.env.TMDB_API_KEY 
+
+const JW_BASE_QUERY = 'https://apis.justwatch.com/content/titles/en_GB/popular?body='
+const JW_SETTINGS = {
+  content_types: ['show', 'movie'],
+  page: 1,
+  page_size: 12,
+}
 
 const providers = [8,39,9,103,38,137,41,129,99]
 
@@ -16,10 +25,8 @@ async function fetchPosters(item) {
   const date_type = object_type === 'movie' ? 'year' : 'first_air_date_year'
   const format_type = object_type === 'movie' ? 'movie' : 'tv'
   
-  const TMDB_BASE_URL = 'https://api.themoviedb.org/3/search/'
-  const TMDB_LANG = '&language=en-US'
-  const TMDB_PAGE = '&page=1'
-  const url = `${TMDB_BASE_URL}${format_type}?api_key=${TMDB_API_KEY}${TMDB_LANG}${TMDB_PAGE}&query=${encodeURI(title)}&${date_type}=${original_release_year}`
+  const url = `${TMDB_BASE_URL}${format_type}?api_key=${TMDB_API_KEY}${TMDB_LANG}${TMDB_PAGE}
+                &query=${encodeURI(title)}&${date_type}=${original_release_year}`
 
   const resJSON = await fetch(url)
   const response = await resJSON.json()
@@ -31,7 +38,10 @@ async function fetchPosters(item) {
 }
 
 async function fetchResults(query) {
-  let responseJSON = await fetch(`${JW_BASE_QUERY}${encodeURI(query)}%22%7D`)
+  const query_settings = Object.assign(JW_SETTINGS, {'query': query})
+  const jw_query_url = `${JW_BASE_QUERY}${encodeURI(JSON.stringify(query_settings))}`
+  
+  let responseJSON = await fetch(jw_query_url)
   let response = await responseJSON.json()
 
   const resultPromiseArray = response.items.map(async item => ({
@@ -54,5 +64,3 @@ export async function handler(event, context) {
     }))
     .catch(error => ({ statusCode: 422, body: String(error) }));
 }
-
-fetchResults('stream').then(res => console.log(res))
